@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.eduworks.angles.mobile" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-navigation href="cdvfile:*" />
+    <feature name="Media">
+        <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
+    </feature>
+    <feature name="Capture">
+        <param name="android-package" value="org.apache.cordova.mediacapture.Capture" />
+    </feature>
+    <feature name="FilePath">
+        <param name="android-package" value="com.hiddentao.cordova.filepath.FilePath" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="VideoEditor">
+        <param name="android-package" value="org.apache.cordova.videoeditor.VideoEditor" />
+    </feature>
+    <name>ANGLES</name>
+    <description>
+        ANGLES capture application.
+    </description>
+    <author email="fritz.ray@eduworks.com" href="http://eduworks.com">
+        Eduworks Corporation.
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="market:*" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="android-minSdkVersion" value="18" />
+    <preference name="android-targetSdkVersion" value="21" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="android-signed" value="true" />
+    <preference name="largeHeap" value="true" />
+</widget>

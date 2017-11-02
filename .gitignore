@@ -1,0 +1,15 @@
+target/
+
+node_modules/
+
+platforms/
+
+plugins/
+
+www/
+
+src/main/webapp/WEB-INF/lib/
+
+src/main/webapp/WEB-INF/classes/
+
+*.iml

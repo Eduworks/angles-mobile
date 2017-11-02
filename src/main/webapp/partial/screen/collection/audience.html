@@ -1,0 +1,82 @@
+<span class="screenLabel">Tag Audience</span>
+<div class="top">
+    <div class="progress" role="progressbar" tabindex="0" aria-valuenow="80" aria-valuemin="0" aria-valuetext="80 percent" aria-valuemax="100">
+        <div class="progress-meter" style="width: 80%"></div>
+    </div>
+</div>
+
+<div class="row column text-center">
+    <p class="lead">Additional Information</p>
+    <label for="name">Title:</label>
+    <input type="text" id="name" />
+    <label for="description">Description:</label>
+    <textarea id="description" />
+    <label for="storyMethod">Method of Storytelling:</label>
+    <select id="storyMethod" field="http://schema.eduworks.com/angles/0.1/storyMethod">
+        <option selected disabled>Select one...</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyMethod/caseBased">Case Based</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyMethod/narrativeBased">Narrative Based</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyMethod/scenarioBased">Scenario Based</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyMethod/problemBased">Problem Based</option>
+    </select>
+    <label for="securityClassification">Security Classification:</label>
+    <select id="securityClassification" field="http://schema.eduworks.com/angles/0.1/securityClassification">
+        <option selected disabled>Select one...</option>
+        <option value="http://schema.eduworks.com/angles/0.1/securityClassification/none">None</option>
+        <option value="http://schema.eduworks.com/angles/0.1/securityClassification/unclassified">Unclassified</option>
+        <option value="http://schema.eduworks.com/angles/0.1/securityClassification/cui">Controlled Unclassified</option>
+        <option value="http://schema.eduworks.com/angles/0.1/securityClassification/statementA">Statement A</option>
+        <option value="http://schema.eduworks.com/angles/0.1/securityClassification/statementB">Statement B</option>
+        <option value="http://schema.eduworks.com/angles/0.1/securityClassification/statementC">Statement C</option>
+        <option value="http://schema.eduworks.com/angles/0.1/securityClassification/statementD">Statement D</option>
+        <option value="http://schema.eduworks.com/angles/0.1/securityClassification/statementE">Statement E</option>
+        <option value="http://schema.eduworks.com/angles/0.1/securityClassification/statementF">Statement F</option>
+        <option value="http://schema.eduworks.com/angles/0.1/securityClassification/statementX">Statement X</option>
+        <option value="http://schema.eduworks.com/angles/0.1/securityClassification/forOfficialUseOnly">For Official Use Only</option>
+        <option value="http://schema.eduworks.com/angles/0.1/securityClassification/secret">Secret</option>
+        <option value="http://schema.eduworks.com/angles/0.1/securityClassification/topSecret">Top Secret</option>
+    </select>
+    <label for="informationType">Type of information:</label>
+    <select id="informationType" field="http://schema.eduworks.com/angles/0.1/informationType">
+        <option selected disabled>Select one...</option>
+        <option value="http://schema.eduworks.com/angles/0.1/informationType/concepts">Concepts</option>
+        <option value="http://schema.eduworks.com/angles/0.1/informationType/process">Processes</option>
+        <option value="http://schema.eduworks.com/angles/0.1/informationType/problems">Problems</option>
+        <option value="http://schema.eduworks.com/angles/0.1/informationType/mixed">Mixed</option>
+    </select>
+    <label for="storyCyberCategory">Lesson:</label>
+    <select id="storyCyberCategory" field="http://schema.eduworks.com/angles/0.1/storyCyberCategory">
+        <option selected disabled>Select one...</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyCyberCategory/backgroundAndContext">Background and Context</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyCyberCategory/indicatorsAndWarnings">Indicators and Warnings</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyCyberCategory/responseMeasures">Response Measures</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyCyberCategory/alternativeCoursesOfAction">Alternative Courses of Action</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyCyberCategory/tipsAndTechniques">Tips and Techniques</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyCyberCategory/examples">Examples</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyCyberCategory/consequences">Consequences</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyCyberCategory/lessonsLearned">Lessons Learned</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyCyberCategory/opportunities">Opportunities</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyCyberCategory/analysis">Analysis</option>
+    </select>
+    <label for="storyTargetExpertise">Level of Complexity:</label>
+    <select id="storyTargetExpertise" field="http://schema.eduworks.com/angles/0.1/storyTargetExpertise">
+        <option selected disabled>Select one...</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyTargetExpertise/novice">Novice</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyTargetExpertise/apprentice">Apprentice</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyTargetExpertise/expert">Expert</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyTargetExpertise/generalPublic">General Public</option>
+    </select>
+    <label for="storyTargetAudience">Type of information:</label>
+    <select id="storyTargetAudience" field="http://schema.eduworks.com/angles/0.1/storyTargetAudience">
+        <option selected disabled>Select one...</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyTargetAudience/newcomer">Newcomer</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyTargetAudience/analyst">Analyst</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyTargetAudience/leadership">Leadership</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyTargetAudience/redTeam">Red Team</option>
+        <option value="http://schema.eduworks.com/angles/0.1/storyTargetAudience/blueTeam">Blue Team</option>
+    </select>
+</div>
+
+<div class="bottom text-center">
+    <button id="next" class="large button">Next</button>
+</div>

@@ -1,0 +1,10 @@
+build:
+  script: "mvn clean && mvn install -B && cordova build browser --verbose --release"
+pages:
+  stage: deploy
+  script:
+  - mkdir public
+  - cp -r platforms/browser/www/* public
+  artifacts:
+    paths:
+    - public

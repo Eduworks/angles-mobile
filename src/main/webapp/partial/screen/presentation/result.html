@@ -1,0 +1,182 @@
+<div id="menubar">
+    <div class="input-group">
+        <span class="input-group-label"><i class="fa fa-user" aria-hidden="true"></i></span>
+        <input id="question" class="input-group-field" type="text" placeholder="Got another question?">
+        <div class="input-group-button">
+            <button id="search" class="large button">Ask it</button>
+        </div>
+    </div>
+</div>
+
+<div id="videoResult">
+    <div id="videoWrapper">
+        <div class="row">
+            <div class="small-12 medium-8 columns medium-centered">
+                <div class="video-container z-depth-3">
+                    <div class="video-controls playing"></div>
+                    <video onpause="$(this).siblings('.video-controls').removeClass('playing');" style="max-width:100%;max-height:75%" ec-attr-thumbnailUrl="poster" autoplay>
+                        <source ec-attr-encodingFormat="type" ec-attr-embedUrl="src" />
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+    <center>
+        <h3 ec-field="name"></h3>
+        <span style="display:none;" ec-field="description"></span>
+    </center>
+</div>
+
+<div id="searchResults">
+    <div class="rateVideo" style="display:none;">
+        <div class="row">
+            <div class="medium-8 columns medium-centered">
+                <div class="row">
+                    <div id="rateVideo" class="small-8 columns">
+                        <p class="lead">Was this helpful? <a class="yes small button">Yes</a> <a class="no small button">No</a>
+                            <small id="thanks" style="display:none;">Thank you for your feedback.</small>
+                        </p>
+                    </div>
+                    <div class="small-4 columns">
+                        <a data-open="modalShare" class="secondary button expanded">Share</a>
+                        <a data-open="modalDetail" class="secondary button expanded">Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="medium-8 columns medium-centered">
+            <h2 id="followupHeader">Learn more</h2>
+            <ul class="questions" ec-container="question" style="cursor:pointer;">
+                <li ec-template="question" style="display:none;">
+                    <span class="dont-break-out" ec-field="text"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row" style="display:none;">
+        <div class="medium-8 columns medium-centered">
+            <div id="relatedList">
+                <hr>
+                <h2 class="lead">Related Videos</h2>
+                <div ec-container="result" id="results" class="row">
+                    <div ec-template="result" class="result column column-block">
+                        <video class="videoThumb thumbnail" ec-attr-thumbnailUrl="poster" style="float:left; max-height: 10em;max-width: 10em;" />
+                        <a ec-field="name" style="display:none;"></a>
+                        <small style="display:none;" ec-field="keywords"></small>
+                        <!--<ul ec-container="question">-->
+                        <!--<li ec-template="question"></li>-->
+                        <!--</ul>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="medium-8 columns medium-centered">
+            <div id="topicList">
+                <hr>
+                <h2 class="lead">Explore Related Topics</h2>
+                <ul class="topics">
+                    <a storyCyberCategory="http://schema.eduworks.com/angles/0.1/storyCyberCategory/alternativeCoursesOfAction" style="display:none">Alternative Courses of Action<br></a>
+                    <a storyCyberCategory="http://schema.eduworks.com/angles/0.1/storyCyberCategory/analysis" style="display:none">Analysis<br></a>
+                    <a storyCyberCategory="http://schema.eduworks.com/angles/0.1/storyCyberCategory/backgroundAndContext" style="display:none">Background and Context<br></a>
+                    <a storyCyberCategory="http://schema.eduworks.com/angles/0.1/storyCyberCategory/consequences" style="display:none">Consequences<br></a>
+                    <a storyCyberCategory="http://schema.eduworks.com/angles/0.1/storyCyberCategory/examples" style="display:none">Examples<br></a>
+                    <a storyCyberCategory="http://schema.eduworks.com/angles/0.1/storyCyberCategory/indicatorsAndWarnings" style="display:none">Indicators and Warnings<br></a>
+                    <a storyCyberCategory="http://schema.eduworks.com/angles/0.1/storyCyberCategory/lessonsLearned" style="display:none">Lessons Learned<br></a>
+                    <a storyCyberCategory="http://schema.eduworks.com/angles/0.1/storyCyberCategory/opportunities" style="display:none">Opportunities<br></a>
+                    <a storyCyberCategory="http://schema.eduworks.com/angles/0.1/storyCyberCategory/responseMeasures" style="display:none">Response Measures<br></a>
+                    <a storyCyberCategory="http://schema.eduworks.com/angles/0.1/storyCyberCategory/tipsAndTechniques" style="display:none">Tips and Techniques</a>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!--
+	<div class="row">
+		<div class="medium-8 columns medium-centered">
+			<h2 id="followupHeader">Follow up questions</h2>
+		</div>
+	</div>
+
+	<div class=" row">
+		<div class="medium-8 columns medium-centered">
+
+			<div class="questions row small-up-1 medium-up-2 large-up-3">
+				<div class="result column column-block">
+					<a>How to collect digital evidence?</a>
+					<img src="//placehold.it/350x350?text=Story" class="videoThumb thumbnail" alt="">
+				</div>
+				<div class="result column column-block">
+					<a>What is chain of custody?</a>
+					<img src="//placehold.it/350x350?text=Story" class="videoThumb thumbnail" alt="">
+				</div>
+				<div class="result column column-block">
+					<a>What are types of persistent data?</a>
+					<img src="//placehold.it/350x350?text=Story" class="videoThumb thumbnail" alt="">
+				</div>
+				<div class="result column column-block">
+					<a>How to recognize digital forensic data?</a>
+					<img src="//placehold.it/350x350?text=Story" class="videoThumb thumbnail" alt="">
+				</div>
+				<div class="result column column-block">
+					<a>How to collect digital evidence?</a>
+					<img src="//placehold.it/350x350?text=Story" class="videoThumb thumbnail" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="medium-8 columns medium-centered">
+			<h4>Ask another question</h4>
+			<div class="input-group">
+				<input id="welcomeQuestion3" class="input-group-field" type="text" placeholder="Type it here...">
+				<div class="input-group-button">
+					<button onclick="showResults(3);" class="large button">Ask it</button>
+				</div>
+			</div>
+		</div>
+	</div>
+-->
+</div>
+
+<div class="reveal" id="modalDetail" data-reveal>
+    <h2 ec-field="name">Share this story with others</h2>
+    <p ec-field="description">Copy the link below</p>
+    <ul>
+        <li>
+            <label for="competencies">Topics</label>
+            <ul id="competencies" ec-container="educationalAlignment">
+                <li ec-template="educationalAlignment" ec-attr-id ec-attr-shortId ec-field="targetName">
+                </li>
+            </ul>
+        </li>
+        <li>
+            <label for="keywords">Keywords</label>
+            <ul id="keywords" ec-container="keywords">
+                <li ec-template="keywords">
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <button data-close class="button">Done</button>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
+
+<div class="reveal" id="modalShare" data-reveal>
+    <h2>Share this story with others</h2>
+    <p class="lead">Copy the link below</p>
+    <input type="text" value="https://angles.eduworks.com/presentation.html" />
+    <button data-close class="button">Done</button>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>

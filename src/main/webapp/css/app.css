@@ -1,0 +1,328 @@
+/* ---- General ---- */
+
+.screenLabel {
+    display: none;
+    opacity: .5;
+    position: fixed;
+    font-size: 10px;
+    padding: .25em;
+    left: 2px;
+    bottom: 2px;
+    background: #fff;
+    color: #000 !important;
+    z-index: 100;
+}
+.screenLabel:after {
+    content: " screen"
+}
+
+
+/* ---- Collection tool ---- */
+
+body {
+    /*
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+*/
+	display: table;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+    overflow: auto;
+}
+
+body.bgImg {
+    background-image: url(../img/bg-anglesBlur.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.callout.faded {
+    background-color: rgba(255,255,255,0.75);
+}
+.callout.faded.dark {
+    background-color: rgba(0,0,0,0.75);
+    color: white;
+}
+
+#screenContainer {
+	display: table-cell;
+    vertical-align: middle;
+}
+
+body.mobile #phone {
+    position: absolute;
+    width: 500px;
+    height: 900px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(../img/bg-iphone7.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+body.mobile #content {
+    width: 375px;
+    height: 667px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding: 1em;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+}
+
+body.mobile #content,
+body.mobile #content .fullscreen {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+body.mobile #content .fullscreen {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+body.mobile #content .fullscreen .top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0;
+}
+
+body.mobile #content .fullscreen .bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right:0;
+}
+
+body.mobile .video {
+    background: #000 url(../img/video-head.png) center no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+
+body.mobile .overlay {
+    background-color: rgba(0,0,0,0.5);
+    padding: 1em;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.keyword {
+    display: inline-block;
+    padding: .5em;
+    margin: 5px;
+    background-color: #ddd;
+/*    border: 1px solid gray;*/
+    cursor: pointer;
+}
+
+.keyword:hover {
+    background-color: #666;
+    color: #fff;
+}
+
+body.mobile label {
+    text-align: left;
+}
+
+/* ---- Presentation Tool ---- */
+
+#menubar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+#followupHeader {
+    text-align: center;
+    margin: 1em 0;
+    padding-bottom: .25em;
+    border-bottom: 1px solid gray;
+}
+
+.questions li {
+    font-size: large;
+}
+
+#results {
+    padding-top: 50px;
+}
+
+#results .result {
+}
+
+#results .result a {
+    display: block;
+    height: 3em;
+    width: 90%;
+    font-weight: bold;
+}
+
+.topics a{
+	cursor:pointer;
+}
+
+#results .topics li a:after {
+    content: '';
+    font-size: smaller;
+    color: #666;
+    text-align: center;
+    display: inline-block;
+    margin-left: 2em;
+    float: right;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+#results .topics li a:hover:after {
+    opacity: 1;
+    content: '< Find stories';
+}
+
+#videoWrapper {
+    padding: 1em;
+    margin: 0;
+    background-color: rgba(0, 0, 0, .5);
+    //position: absolute;
+    top: 40px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    text-align: center;
+}
+
+/* ---- VIDEO ---- */
+
+#video {
+    width: 100%;
+}
+#video.portrait {
+    width: 400px;
+}
+
+.video-container {
+    position: relative;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+}
+
+.video-controls {
+    display: block;
+    cursor: pointer;
+    background: rgba(0, 0, 0, .5) url(../img/play2.svg) no-repeat center center;
+    background-size: 20%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity .2s cubic-bezier(.4, 0, .2, 1);
+}
+
+.video-controls.playing {
+    opacity: 0;
+}
+
+.videoThumb {
+    cursor: pointer;
+}
+
+.rateVideo {
+    color: #fff;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+#rateVideo #thanks {
+    font-style: italic;
+    margin-left: 1em;
+    opacity: .75;
+}
+
+
+/* ---- Media Breakpoints ---- */
+
+
+/* Small only */
+
+@media screen and (max-width: 39.9375em) {
+    body.mobile #phone,
+    body.mobile #content {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        transform: none;
+    }
+}
+
+
+/* Medium and up */
+
+@media screen and (min-width: 40em) {}
+
+
+/* Medium only */
+
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {}
+
+
+/* Large and up */
+
+@media screen and (min-width: 64em) {}
+
+
+/* Large only */
+
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+
+.dont-break-out {
+
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+
+}

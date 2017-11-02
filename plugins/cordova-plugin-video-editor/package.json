@@ -1,0 +1,101 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "git+https://github.com/lomilar/cordova-plugin-video-editor.git",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "git+https://github.com/lomilar/cordova-plugin-video-editor.git",
+        "spec": "git+https://github.com/lomilar/cordova-plugin-video-editor.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:lomilar/cordova-plugin-video-editor.git",
+          "sshUrl": "git+ssh://git@github.com/lomilar/cordova-plugin-video-editor.git",
+          "httpsUrl": "git+https://github.com/lomilar/cordova-plugin-video-editor.git",
+          "gitUrl": "git://github.com/lomilar/cordova-plugin-video-editor.git",
+          "shortcut": "github:lomilar/cordova-plugin-video-editor",
+          "directUrl": "https://raw.githubusercontent.com/lomilar/cordova-plugin-video-editor/master/package.json"
+        }
+      },
+      "/home/fray/workspace/es.angles.mobile/node_modules"
+    ]
+  ],
+  "_from": "git+https://github.com/lomilar/cordova-plugin-video-editor.git",
+  "_id": "cordova-plugin-video-editor@1.1.2",
+  "_inCache": true,
+  "_location": "/cordova-plugin-video-editor",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "git+https://github.com/lomilar/cordova-plugin-video-editor.git",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "git+https://github.com/lomilar/cordova-plugin-video-editor.git",
+    "spec": "git+https://github.com/lomilar/cordova-plugin-video-editor.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:lomilar/cordova-plugin-video-editor.git",
+      "sshUrl": "git+ssh://git@github.com/lomilar/cordova-plugin-video-editor.git",
+      "httpsUrl": "git+https://github.com/lomilar/cordova-plugin-video-editor.git",
+      "gitUrl": "git://github.com/lomilar/cordova-plugin-video-editor.git",
+      "shortcut": "github:lomilar/cordova-plugin-video-editor",
+      "directUrl": "https://raw.githubusercontent.com/lomilar/cordova-plugin-video-editor/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/lomilar/cordova-plugin-video-editor.git#1946b5e72d2420dedf7f3f7da58f73ab80a18636",
+  "_shasum": "15e201f0c17af0a2fbe44c1db3b398afe8c1daed",
+  "_shrinkwrap": null,
+  "_spec": "git+https://github.com/lomilar/cordova-plugin-video-editor.git",
+  "_where": "/home/fray/workspace/es.angles.mobile/node_modules",
+  "author": {
+    "name": "Josh Bavari"
+  },
+  "bugs": {
+    "url": "https://github.com/jbavari/cordova-plugin-video-editor/issues"
+  },
+  "contributors": [
+    {
+      "name": "Josh Bavari",
+      "email": "jbavari@gmail.com",
+      "url": "https://twitter.com/jbavari"
+    },
+    {
+      "name": "Ross Martin",
+      "email": "rmartin311@gmail.com",
+      "url": "https://twitter.com/MountainDoofus"
+    }
+  ],
+  "cordova": {
+    "id": "cordova-plugin-video-editor",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "Cordova Video Editor Plugin",
+  "devDependencies": {},
+  "gitHead": "1946b5e72d2420dedf7f3f7da58f73ab80a18636",
+  "homepage": "https://github.com/jbavari/cordova-plugin-video-editor#readme",
+  "keywords": [],
+  "license": "MIT",
+  "name": "cordova-plugin-video-editor",
+  "optionalDependencies": {},
+  "readme": "[![npm version](https://badge.fury.io/js/cordova-plugin-video-editor.svg)](https://badge.fury.io/js/cordova-plugin-video-editor)\r\n\r\nThis is a cordova plugin to assist in several video editing tasks such as:\r\n\r\n* Transcoding\r\n* Trimming\r\n* Creating thumbnails from a video file (now at a specific time in the video)\r\n* Getting info on a video - width, height, orientation, duration, size, & bitrate.\r\n\r\nAfter looking at an article on [How Vine Satisfied Its Need for Speed](http://www.technologyreview.com/view/510511/how-vine-satisfies-its-need-for-speed/), it was clear Cordova/Phonegap needed a way to modify videos to be faster for app's that need that speed.\r\n\r\nThis plugin will address those concerns, hopefully.\r\n\r\n## Installation\r\n```\r\ncordova plugin add cordova-plugin-video-editor\r\n```\r\n`VideoEditor` and `VideoEditorOptions` will be available in the window after deviceready.\r\n\r\n## Usage\r\n\r\n### Transcode a video\r\n\r\n```javascript\r\n// parameters passed to transcodeVideo\r\nVideoEditor.transcodeVideo(\r\n    success, // success cb\r\n    error, // error cb\r\n    {\r\n        fileUri: 'file-uri-here', // the path to the video on the device\r\n        outputFileName: 'output-name', // the file name for the transcoded video\r\n        outputFileType: VideoEditorOptions.OutputFileType.MPEG4, // android is always mp4\r\n        optimizeForNetworkUse: VideoEditorOptions.OptimizeForNetworkUse.YES, // ios only\r\n        saveToLibrary: true, // optional, defaults to true\r\n        deleteInputFile: false, // optional (android only), defaults to false\r\n        maintainAspectRatio: true, // optional (ios only), defaults to true\r\n        width: 640, // optional, see note below on width and height\r\n        height: 640, // optional, see notes below on width and height\r\n        videoBitrate: 1000000, // optional, bitrate in bits, defaults to 1 megabit (1000000)\r\n        fps: 24, // optional (android only), defaults to 24\r\n        audioChannels: 2, // optional (ios only), number of audio channels, defaults to 2\r\n        audioSampleRate: 44100, // optional (ios only), sample rate for the audio, defaults to 44100\r\n        audioBitrate: 128000, // optional (ios only), audio bitrate for the video in bits, defaults to 128 kilobits (128000)\r\n        progress: function(info) {} // info will be a number from 0 to 100\r\n    }\r\n);\r\n```\r\n#### A note on width and height used by transcodeVideo\r\nI recommend setting `maintainAspectRatio` to true.  When this option is true you can provide any width/height and the height provided will be used to calculate the new width for the output video.  If you set `maintainAspectRatio` false there is a good chance you'll end up with videos that are stretched and/or distorted.  Here is the simplified formula used on iOS when `maintainAspectRatio` is true -\r\n```objective-c\r\naspectRatio = videoWidth / videoHeight;\r\noutputWidth = height * aspectRatio;\r\noutputHeight = outputWidth / aspectRatio;\r\n```\r\n\r\nAndroid will always use the aspect ratio of the input video to calculate the scaled output width and height.  Setting `maintainAspectRatio` on android will make not make a difference.\r\n\r\nIf you don't provide width and height to `transcodeVideo` the output video will have the same dimensions as the input video.\r\n\r\n#### transcodeVideo example -\r\n```javascript\r\n// options used with transcodeVideo function\r\n// VideoEditorOptions is global, no need to declare it\r\nvar VideoEditorOptions = {\r\n    OptimizeForNetworkUse: {\r\n        NO: 0,\r\n        YES: 1\r\n    },\r\n    OutputFileType: {\r\n        M4V: 0,\r\n        MPEG4: 1,\r\n        M4A: 2,\r\n        QUICK_TIME: 3\r\n    }\r\n};\r\n```\r\n```javascript\r\n// this example uses the cordova media capture plugin\r\nnavigator.device.capture.captureVideo(\r\n    videoCaptureSuccess,\r\n    videoCaptureError,\r\n    {\r\n        limit: 1,\r\n        duration: 20\r\n    }\r\n);\r\n\r\nfunction videoCaptureSuccess(mediaFiles) {\r\n    // Wrap this below in a ~100 ms timeout on Android if\r\n    // you just recorded the video using the capture plugin.\r\n    // For some reason it is not available immediately in the file system.\r\n\r\n    var file = mediaFiles[0];\r\n    var videoFileName = 'video-name-here'; // I suggest a uuid\r\n\r\n    VideoEditor.transcodeVideo(\r\n        videoTranscodeSuccess,\r\n        videoTranscodeError,\r\n        {\r\n            fileUri: file.fullPath,\r\n            outputFileName: videoFileName,\r\n            outputFileType: VideoEditorOptions.OutputFileType.MPEG4,\r\n            optimizeForNetworkUse: VideoEditorOptions.OptimizeForNetworkUse.YES,\r\n            saveToLibrary: true,\r\n            maintainAspectRatio: true,\r\n            width: 640,\r\n            height: 640,\r\n            videoBitrate: 1000000, // 1 megabit\r\n            audioChannels: 2,\r\n            audioSampleRate: 44100,\r\n            audioBitrate: 128000, // 128 kilobits\r\n            progress: function(info) {\r\n                console.log('transcodeVideo progress callback, info: ' + info);\r\n            }\r\n        }\r\n    );\r\n}\r\n\r\nfunction videoTranscodeSuccess(result) {\r\n\t// result is the path to the transcoded video on the device\r\n    console.log('videoTranscodeSuccess, result: ' + result);\r\n}\r\n\r\nfunction videoTranscodeError(err) {\r\n\tconsole.log('videoTranscodeError, err: ' + err);\r\n}\r\n```\r\n\r\n#### Windows Quirks\r\nWindows does not support any of the optional parameters at this time. Specifying them will not cause an error but, there is no functionality behind them.\r\n\r\n### Trim a Video (iOS only)\r\n```javascript\r\nVideoEditor.trim(\r\n    trimSuccess,\r\n    trimFail,\r\n    {\r\n        fileUri: 'file-uri-here', // path to input video\r\n        trimStart: 5, // time to start trimming in seconds\r\n        trimEnd: 15, // time to end trimming in seconds\r\n        outputFileName: 'output-name', // output file name\r\n        progress: function(info) {} // optional, see docs on progress\r\n    }\r\n);\r\n\r\nfunction trimSuccess(result) {\r\n    // result is the path to the trimmed video on the device\r\n    console.log('trimSuccess, result: ' + result);\r\n}\r\n\r\nfunction trimFail(err) {\r\n    console.log('trimFail, err: ' + err);\r\n}\r\n```\r\n\r\n### Create a JPEG thumbnail from a video\r\n```javascript\r\nVideoEditor.createThumbnail(\r\n    success, // success cb\r\n    error, // error cb\r\n    {\r\n        fileUri: 'file-uri-here', // the path to the video on the device\r\n        outputFileName: 'output-name', // the file name for the JPEG image\r\n        atTime: 2, // optional, location in the video to create the thumbnail (in seconds)\r\n        width: 320, // optional, width of the thumbnail\r\n        height: 480, // optional, height of the thumbnail\r\n        quality: 100 // optional, quality of the thumbnail (between 1 and 100)\r\n    }\r\n);\r\n// atTime will default to 0 if not provided\r\n// width and height will be the same as the video input if they are not provided\r\n// quality will default to 100 if not provided\r\n```\r\n\r\n```javascript\r\n// this example uses the cordova media capture plugin\r\nnavigator.device.capture.captureVideo(\r\n    videoCaptureSuccess,\r\n    videoCaptureError,\r\n    {\r\n        limit: 1,\r\n        duration: 20\r\n    }\r\n);\r\n\r\nfunction videoCaptureSuccess(mediaFiles) {\r\n    // Wrap this below in a ~100 ms timeout on Android if\r\n    // you just recorded the video using the capture plugin.\r\n    // For some reason it is not available immediately in the file system.\r\n\r\n    var file = mediaFiles[0];\r\n    var videoFileName = 'video-name-here'; // I suggest a uuid\r\n\r\n    VideoEditor.createThumbnail(\r\n        createThumbnailSuccess,\r\n        createThumbnailError,\r\n        {\r\n            fileUri: file.fullPath,\r\n            outputFileName: videoFileName,\r\n            atTime: 2,\r\n            width: 320,\r\n            height: 480,\r\n            quality: 100\r\n        }\r\n    );\r\n}\r\n\r\nfunction createThumbnailSuccess(result) {\r\n    // result is the path to the jpeg image on the device\r\n    console.log('createThumbnailSuccess, result: ' + result);\r\n}\r\n```\r\n\r\n#### A note on width and height used by createThumbnail\r\nThe aspect ratio of the thumbnail created will match that of the video input.  This means you may not get exactly the width and height dimensions you give to `createThumbnail` for the jpeg.  This for your convenience but let us know if it is a problem.  I am considering adding a `maintainAspectRatio` option to `createThumbnail` (and when this option is false you might have stretched, square thumbnails :laughing:).\r\n\r\n### Get info on a video (width, height, orientation, duration, size, & bitrate)\r\n```javascript\r\nVideoEditor.getVideoInfo(\r\n    success, // success cb\r\n    error, // error cb\r\n    {\r\n        fileUri: 'file-uri-here', // the path to the video on the device\r\n    }\r\n);\r\n```\r\n\r\n```javascript\r\nVideoEditor.getVideoInfo(\r\n    getVideoInfoSuccess,\r\n    getVideoInfoError,\r\n    {\r\n        fileUri: file.fullPath\r\n    }\r\n);\r\n\r\nfunction getVideoInfoSuccess(info) {\r\n    console.log('getVideoInfoSuccess, info: ' + JSON.stringify(info, null, 2));\r\n    // info is a JSON object with the following properties -\r\n    {\r\n        width: 1920,\r\n        height: 1080,\r\n        orientation: 'landscape', // will be portrait or landscape\r\n        duration: 3.541, // duration in seconds\r\n        size: 6830126, // size of the video in bytes\r\n        bitrate: 15429777 // bitrate of the video in bits per second\r\n    }\r\n}\r\n```\r\n\r\n## Android & FFmpeg\r\nFFmpeg has been removed from android for several reasons but mainly for performance.  If you still need the old functionality that FFmpeg provided  [V1.09](https://github.com/jbavari/cordova-plugin-video-editor/tree/1.0.9) is the last version that will use it.\r\n\r\n## On iOS\r\n\r\n[iOS Developer AVFoundation Documentation](https://developer.apple.com/library/ios/documentation/AudioVideo/Conceptual/AVFoundationPG/Articles/01_UsingAssets.html#//apple_ref/doc/uid/TP40010188-CH7-SW8)\r\n\r\n[Video compression in AVFoundation](http://www.iphonedevsdk.com/forum/iphone-sdk-development/110246-video-compression-avassetwriter-in-avfoundation.html)\r\n\r\n[AVFoundation slides - tips/tricks](https://speakerdeck.com/bobmccune/composing-and-editing-media-with-av-foundation)\r\n\r\n[AVFoundation slides #2](http://www.slideshare.net/bobmccune/learning-avfoundation)\r\n\r\n[Bob McCune's AVFoundation Editor - ios app example](https://github.com/tapharmonic/AVFoundationEditor)\r\n\r\n[Saving videos after recording videos](http://stackoverflow.com/questions/20902234/save-video-to-library-after-capturing-video-using-phonegap-capturevideo)\r\n\r\n\r\n\r\n## On Android\r\n\r\n[Android Documentation](http://developer.android.com/guide/appendix/media-formats.html#recommendations)\r\n\r\n[Android Media Stores](http://developer.android.com/reference/android/provider/MediaStore.html#EXTRA_VIDEO_QUALITY)\r\n\r\n[How to Port ffmpeg (the Program) to Android–Ideas and Thoughts](http://www.roman10.net/how-to-port-ffmpeg-the-program-to-androidideas-and-thoughts/)\r\n\r\n[How to Build Android Applications Based on FFmpeg by An Example](http://www.roman10.net/how-to-build-android-applications-based-on-ffmpeg-by-an-example/)\r\n\r\n\r\n## On Windows\r\n\r\n\r\n## License\r\n\r\nAndroid: GPL\r\n\r\niOS: MIT\r\n\r\nWindows: Apache 2.0\r\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbavari/cordova-plugin-video-editor.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.1.2"
+}

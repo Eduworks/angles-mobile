@@ -1,0 +1,24 @@
+Node version: v6.11.0
+
+Cordova version: 4.3.1
+
+Config.xml file: 
+
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.eduworks.angles.mobile" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>ANGLES</name>
+    <description>
+        ANGLES capture application.
+    </description>
+    <author email="fritz.ray@eduworks.com" href="http://eduworks.com">
+        Eduworks Corporation.
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>
+
+
+No Plugins Currently Installed
+
+
+
